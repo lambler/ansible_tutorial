@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update Repository Index
+    dnf:
+      update_cache: yes
+
+  - name: Install HTTPD Package
+    dnf:
+      name: httpd
+
+  - name: Add php support
+    dnf: bash-completion
