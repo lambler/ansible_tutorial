@@ -4,13 +4,11 @@
   become: true
   tasks:
 
-  - name: Update Repository Index
-    dnf:
+  - name: Install apache package and php
+    package:
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+        - "{{ nginx_package }}"
+      state: latest
       update_cache: yes
-
-  - name: Install HTTPD Package
-    dnf:
-      name: httpd
-
-  - name: Add php support
-    dnf: bash-completion

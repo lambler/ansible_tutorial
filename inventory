@@ -1,3 +1,9 @@
+[web_servers]
 server-001
 server-003
+
+[db_servers]
 server-002
+
+[file_servers]
+server-003

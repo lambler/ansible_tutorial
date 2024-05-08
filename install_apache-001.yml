@@ -7,18 +7,39 @@
   - name: update repository index
     dnf:
       update_cache: yes
+    when: ansible_distribution == "Fedora"  
 
   - name: Install httpd package
     dnf:
       name: httpd
       state: latest
+    when: ansible_distribution == "Fedora"  
 
   - name: Install git
     dnf:
       name: git
       state: latest
+    when: ansible_distribution == "Fedora"  
 
   - name: Install nginx
     dnf:
       name: nginx
       state: latest
+    when: ansible_distribution == "Fedora"  
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"  
+
+  - name: Install apache2 package
+    apt:
+      name: apache2
+      state: latest
+    when: ansible_distribution == "Ubuntu"  
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: latest
+    when: ansible_distribution == "Ubuntu"   
