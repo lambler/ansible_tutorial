@@ -7,3 +7,6 @@ server-002
 
 [file_servers]
 server-003
+
+[workstations]
+workstation-001
